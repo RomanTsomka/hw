@@ -8,11 +8,18 @@ month_dict = {'Зима':  [12, 1, 2],
               'Лето':  [6, 7, 8],
               'Осень': [9, 10, 11]}
 
+seasons_list = [['Зима', 12, 1, 2], ['Весна', 3, 4, 5], ['Лето', 6, 7, 8], ['Осень', 9, 10, 11]]
+
 month_num = int(input('Введите порядковый номер месяца в году (1..12): '))
 if month_num in range(1, 13):
     for i in month_dict.items():
         if month_num in i[1]:
              print(f'Результат через словарь: {i[0]}')
-             break
+if month_num in range(1, 13):
+    for i, el in enumerate(seasons_list):
+        if month_num in el[1:4]:
+            print(f'Результат через список: {el[0]}')
+
+             
 else:
     print('Введен некорректный номер месяца!')
